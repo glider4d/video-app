@@ -21,6 +21,7 @@ endif()
 
 add_subdirectory(lib/glfw)
 add_subdirectory(lib/glad)
+add_subdirectory(lib/FFmpeg)
 
 add_executable(${PROJECT_NAME} src/main.cpp)
 
@@ -38,3 +39,13 @@ endif()
 
 target_link_libraries(${PROJECT_NAME} glfw)
 target_link_libraries(${PROJECT_NAME} glad)
+target_link_libraries(${PROJECT_NAME} FFmpeg)
+
+
+target_link_libraries(${PROJECT_NAME} ${AVCODEC_LIBRARY})
+target_link_libraries(${PROJECT_NAME} ${AVFORMAT_LIBRARY})
+target_link_libraries(${PROJECT_NAME} ${AVFILTER_LIBRARY})
+# target_link_libraries(${PROJECT_NAME} ${AVDEVICE_LIBRARY})
+target_link_libraries(${PROJECT_NAME} ${AVUTIL_LIBRARY})
+target_link_libraries(${PROJECT_NAME} ${SWRESAMPLE_LIBRARY})
+# target_link_libraries(${PROJECT_NAME} ${SWSCALE_LIBRARY})
