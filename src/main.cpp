@@ -18,18 +18,12 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    //{ new unsigned char[100 * 100 * 3] };
     std::unique_ptr<unsigned char[]> uData = std::make_unique<unsigned char[]>(100 * 100 * 3);
-    //unsigned char* data = new unsigned char[100 * 100 * 3];
     for ( int y = 0; y < 100; ++y ) {
         for (int x = 0; x < 100; ++x ) {
             uData[y * 100 * 3 + x * 3] = 0xff;
             uData[y * 100 * 3 + x * 3 + 1] = 0x00;
             uData[y * 100 * 3 + x * 3 + 2] = 0x00;
-
-            //data[y * 100 * 3 + x * 3] = 0xff;
-            //data[y * 100 * 3 + x * 3 + 1] = 0x00;
-            //data[y * 100 * 3 + x * 3 + 2] = 0x00;
 
         }
     }
@@ -43,9 +37,6 @@ int main(int argc, char* argv[]) {
         glfwSwapBuffers(window);
         glfwWaitEvents();
     }
-
-
-//    delete [] data;
 
 
 
